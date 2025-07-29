@@ -1,0 +1,23 @@
+<svg width="300" height="100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cloud icon -->
+  <g transform="translate(10, 25)">
+    <!-- Cloud shape -->
+    <path d="M40 30c0 5.5-4.5 10-10 10H15c-5.5 0-10-4.5-10-10 0-4.4 3.6-8 8-8 .6-5.1 5-9 10.2-9 4.5 0 8.4 2.9 9.6 7 4.4.1 7.9 3.7 7.9 8z"
+          fill="#FFFFFF"/>
+
+    <!-- Black bars inside the cloud -->
+    <g transform="translate(8, 5)" fill="#000000">
+      <rect x="8"  y="12" width="2" height="6"  rx="1"/>
+      <rect x="12" y="10" width="2" height="10" rx="1"/>
+      <rect x="16" y="8"  width="2" height="14" rx="1"/>
+      <rect x="20" y="10" width="2" height="10" rx="1"/>
+      <rect x="24" y="12" width="2" height="6"  rx="1"/>
+    </g>
+  </g>
+
+  <!-- Text positioned directly in front of the cloud -->
+  <text x="55" y="60" font-family="Arial, sans-serif" font-size="28" fill="#FFFFFF">
+    <tspan>Sky</tspan>
+    <tspan> Tune</tspan>
+  </text>
+</svg>
