@@ -18,7 +18,7 @@ function secondsToMinutesSeconds(seconds) {
 
 async function getSongs(folder) {
     currFolder = folder;
-    let a = await fetch(`/songs/${folder}/`);
+    let a = await fetch(`./songs/${folder}/`);
     let response = await a.text();
 
     let div = document.createElement("div")
@@ -39,14 +39,14 @@ async function getSongs(folder) {
     for (const song of songs) {
         songUL.innerHTML = songUL.innerHTML + `
         <li>
-                <img class="invert" src="/images/music.svg" alt="">
+                <img class="invert" src="images/music.svg" alt="">
                 <div class="info">
                     <div>${song.replaceAll("%20", " ")}</div>
                     <div></div>
                 </div>
                 <div class="playnow">
                     <span>play now</span>
-                <img class="invert sideplay" src="/images/play.svg" alt="">
+                <img class="invert sideplay" src="images/play.svg" alt="">
             </div></li>`;
     }
 
@@ -65,10 +65,10 @@ const playMusic = (track, pause = false) => {
         return;
     }
 
-    currentSong.src = `/songs/${currFolder}/` + track;
+    currentSong.src = `./songs/${currFolder}/` + track;
     if (!pause) {
         currentSong.play();
-        play.src = "/images/pause.svg";
+        play.src = "images/pause.svg";
     }
 
     document.querySelector(".songinfo").innerHTML = decodeURI(track);
@@ -83,7 +83,7 @@ async function displayAlbums() {
 
         for (const folder of musicFolders) {
             try {
-                const infoResponse = await fetch(`/songs/${folder}/info.json`);
+                const infoResponse = await fetch(`./songs/${folder}/info.json`);
                 if (!infoResponse.ok) {
                     console.warn(`No info.json found in ${folder}`);
                     continue;
@@ -102,8 +102,8 @@ async function displayAlbums() {
                             </g>
                         </svg>
                     </div>
-                    <img class="album-cover" src="/songs/${folder}/cover.jpg" 
-                         onerror="this.src='/images/default-cover.jpg'"
+                    <img class="album-cover" src="./songs/${folder}/cover.jpg" 
+                         onerror="this.src='images/default-cover.jpg'"
                          alt="${albumInfo.title}">
                     <h2>${albumInfo.title}</h2>
                     <p>${albumInfo.description}</p>
@@ -144,11 +144,11 @@ async function main() {
     play.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play();
-            play.src = "/images/pause.svg"
+            play.src = "images/pause.svg"
         }
         else {
             currentSong.pause();
-            play.src = "/images/play.svg"
+            play.src = "images/play.svg"
         }
     })
 
