@@ -102,8 +102,8 @@ async function displayAlbums() {
                             </g>
                         </svg>
                     </div>
-                    <img class="album-cover" src="/songs/${folder}/cover.jpg" 
-                         onerror="this.src='/images/default-cover.jpg'"
+                    <img class="album-cover" src="songs/${folder}/cover.jpg" 
+                         onerror="this.src='images/default-cover.jpg'"
                          alt="${albumInfo.title}">
                     <h2>${albumInfo.title}</h2>
                     <p>${albumInfo.description}</p>
