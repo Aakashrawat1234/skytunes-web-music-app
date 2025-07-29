@@ -29,7 +29,7 @@ async function getSongs(folder) {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split(`/${folder}/`)[1])
+            songs.push(element.href.split(`songs/${folder}/`)[1])
         }
     }
 
@@ -65,7 +65,7 @@ const playMusic = (track, pause = false) => {
         return;
     }
 
-    currentSong.src = `./songs/${currFolder}/` + track;
+    currentSong.src = `./songs/${currFolder}/${track}`;
     if (!pause) {
         currentSong.play();
         play.src = "images/pause.svg";
@@ -134,7 +134,7 @@ async function main() {
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00";
 
     // Get the list of all songs
-    songs = await getSongs("songs/ncs");
+    songs = await getSongs("ncs");
     playMusic(songs[0], true)
 
     // Display all the albums on the page
