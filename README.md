@@ -1,6 +1,6 @@
 Sky Tunes - A Spotify-Inspired Music Player
 Overview
-Sky Tuned is a web-based music player with a clean, interactive interface inspired by Spotify. It features a card-based music selection system on the right side, and a functional player on the left side with play/pause, next, and previous controls.
+Sky Tune is a web-based music player with a clean, interactive interface inspired by Spotify. It features a card-based music selection system on the right side, and a functional player on the left side with play/pause, next, and previous controls.
 
 Features
 Card-Based Music Selection –  click on music cards to load songs on left side .
